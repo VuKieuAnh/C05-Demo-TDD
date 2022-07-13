@@ -32,5 +32,19 @@ class NextDayTest {
 //        A: Assert So sanh
         assertEquals(expect, result);
     }
+    @Test
+    @DisplayName("case 30/4/2018")
+    void testDay30Month4Year2018(){
+//        A: arrange Chuan bi du lieu
+        int dayTest = 30;
+        int monthTest = 4;
+        int yearTest = 2018;
+
+        String expect = "1/5/2018";
+//   ex   A: action Chay phuong thuc
+        String result = NextDay.getNextDay(dayTest, monthTest, yearTest);
+//        A: Assert So sanh
+        assertEquals(expect, result);
+    }
 
 }
