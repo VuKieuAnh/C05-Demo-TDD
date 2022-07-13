@@ -5,6 +5,19 @@ public class NextDay {
 
     public static String getNextDay(int dayTest, int monthTest, int yearTest) {
         int day;
+        int lastOfMonth = getLastOfMonth(monthTest);
+        if (dayTest== lastOfMonth){
+            day= STARTOFMONTH;
+            monthTest++;
+        }
+        else {
+            day = dayTest+1;
+        }
+        String result = day+ CONCATENATION + monthTest+ CONCATENATION + yearTest;
+        return  result;
+    }
+
+    private static int getLastOfMonth(int monthTest) {
         int lastOfMonth;
         switch (monthTest){
             case 1:
@@ -27,14 +40,6 @@ public class NextDay {
                 lastOfMonth=31;
 
         }
-        if (dayTest== lastOfMonth){
-            day= STARTOFMONTH;
-            monthTest++;
-        }
-        else {
-            day = dayTest+1;
-        }
-        String result = day+ CONCATENATION + monthTest+ CONCATENATION + yearTest;
-        return  result;
+        return lastOfMonth;
     }
 }
